@@ -16,6 +16,8 @@ nav {
  
 }
 
+
+
 nav:hover{
     background:    #15d798;
 background:    linear-gradient(#15d798, #073763);
@@ -134,9 +136,32 @@ button:hover {
     background-color: rgba(255,140,0,1)
 }
 
-button:focus {
+
+
+li:hover {
+    transition: all 0.3s ease 0s ;
+    background-color: #66ff0028
+}
+
+input:hover {
+    transition: all 0.3s ease 0s ;
+    background-color: #66ff0028
+}
+
+input:focus {
     transition: all 0.3s ease 0s ;
     background-color: rgba(255,140,0,1)
+}
+
+
+select:focus {
+    transition: all 0.3s ease 0s ;
+    background-color: rgba(255,140,0,1)
+}
+
+select:hover {
+    transition: all 0.3s ease 0s ;
+    background-color: #66ff0028
 }
 
 
