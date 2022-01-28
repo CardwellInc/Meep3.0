@@ -136,6 +136,12 @@ button:hover {
     background-color: rgba(255,140,0,1)
 }
 
+form:hover {
+    
+    transition: all 0.3s ease 0s ;
+    background-color: #66ff0028
+}
+
 
 
 li:hover {
