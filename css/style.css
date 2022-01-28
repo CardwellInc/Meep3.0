@@ -140,7 +140,7 @@ button:hover {
 
 li:hover {
     transition: all 0.3s ease 0s ;
-  background-color: rgba(255,140,0,1)
+   background-color: #66ff0028
 }
 
 input:hover {
