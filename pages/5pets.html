@@ -33,7 +33,14 @@
 <!--1nd Pet-->
 <form class="MEEP" id="Resets">
     <li><strong>Pet's Name: </strong><input id="PetName" type="text" placeholder="What is the Pets Name?" required></li>
-    Number of RPF's <select id = "RPF">
+    <li>Banking Day: <select id = "BK">
+        <option value="5"> 5 </option>
+        <option value="12"> 12 </option>
+        <option value="19"> 19 </option>
+        <option value="26"> 26 </option>
+        <option value="30"> 30* </option>
+        </select>
+    RPF Charges: <select id = "RPF">
         <option value="0"> 0 </option>
         <option value="1"> 1 </option>
         <option value="2"> 2 </option>
@@ -47,7 +54,7 @@
         <option value="10"> 10 </option>
         <option value="11"> 11 </option>
         <option value="12"> 12 </option>
-        </select>
+        </select></li>
         <li>Services Used: <input id="Used" type="number" placeholder="Used Services" required></li>
         <li>Full Plan Costs: <input id="Plan" type="number" placeholder="Full WP Cost" required></li>
         <li>Installments Paid: <input id="Paid" type="number" placeholder="Installments Paid" required></li>
@@ -60,7 +67,14 @@
 </div> 
 <form class="MEEP" id="Resets2">
 <li><strong>Pet's Name: </strong><input id="PetName2" type="text" placeholder="What is the Pets Name?" required></li>
-Number of RPF's <select id = "RPF2">
+<li>Banking Day: <select id = "BK2">
+<option value="5"> 5 </option>
+<option value="12"> 12 </option>
+<option value="19"> 19 </option>
+<option value="26"> 26 </option>
+<option value="30"> 30* </option>
+</select>
+RPF Charges: <select id = "RPF2">
 <option value="0"> 0 </option>
 <option value="1"> 1 </option>
 <option value="2"> 2 </option>
@@ -74,7 +88,7 @@ Number of RPF's <select id = "RPF2">
 <option value="10"> 10 </option>
 <option value="11"> 11 </option>
 <option value="12"> 12 </option>
-</select>
+</select></li>
 <li>Services Used: <input id="Used2" type="number" placeholder="Used Services" required></li>
 <li>Full Plan Costs: <input id="Plan2" type="number" placeholder="Full WP Cost" required></li>
 <li>Installments Paid: <input id="Paid2" type="number" placeholder="Installments Paid" required></li>
@@ -86,7 +100,14 @@ Number of RPF's <select id = "RPF2">
 <!--3rd Pet-->
 <form class="MEEP" id="Resets3">
 <li><strong>Pet's Name: </strong><input id="PetName3" type="text" placeholder="What is the Pets Name?" required></li>
-Number of RPF's <select id = "RPF3">
+<li>Banking Day: <select id = "BK3">
+<option value="5"> 5 </option>
+<option value="12"> 12 </option>
+<option value="19"> 19 </option>
+<option value="26"> 26 </option>
+<option value="30"> 30* </option>
+</select>
+RPF Charges: <select id = "RPF3">
 <option value="0"> 0 </option>
 <option value="1"> 1 </option>
 <option value="2"> 2 </option>
@@ -100,7 +121,7 @@ Number of RPF's <select id = "RPF3">
 <option value="10"> 10 </option>
 <option value="11"> 11 </option>
 <option value="12"> 12 </option>
-</select>
+</select></li>
 
 <li>Services Used: <input id="Used3" type="number" placeholder="Used Services" required></li>
 <li>Full Plan Costs: <input id="Plan3" type="number" placeholder="Full WP Cost" required></li>
@@ -113,32 +134,14 @@ Number of RPF's <select id = "RPF3">
 <form class="MEEP" id="Resets4">
 <li><strong>Pet's Name: </strong><input id="PetName4" type="text" placeholder="What is the Pets Name?" required></li>
 
-Number of RPF's <select id = "RPF4">
-    <option value="0"> 0 </option>
-    <option value="1"> 1 </option>
-    <option value="2"> 2 </option>
-    <option value="3"> 3 </option>
-    <option value="4"> 4 </option>
-    <option value="5"> 5 </option>
-    <option value="6"> 6 </option>
-    <option value="7"> 7 </option>
-    <option value="8"> 8 </option>
-    <option value="9"> 9 </option>
-    <option value="10"> 10 </option>
-    <option value="11"> 11 </option>
-    <option value="12"> 12 </option>
-    </select>
-<li>Services Used: <input id="Used4" type="number" placeholder="Used Services" required></li>
-<li>Full Plan Costs: <input id="Plan4" type="number" placeholder="Full WP Cost" required></li>
-<li>Installments Paid: <input id="Paid4" type="number" placeholder="Installments Paid" required></li>
-<li>End Date: <input id="EndDate4" type="datetime" placeholder="End Date"></li>
-<input id="Close4" type="number" placeholder="Cost to Close" hidden>    
-</form>
-<hr>
-<!--5th Pet-->
-<form class="MEEP" id="Resets5">
-<li><strong>Pet's Name: </strong><input id="PetName5" type="text" placeholder="What is the Pets Name?" required></li>
-Number of RPF's <select id = "RPF5">
+<li>Banking Day: <select id = "BK4">
+<option value="5"> 5 </option>
+<option value="12"> 12 </option>
+<option value="19"> 19 </option>
+<option value="26"> 26 </option>
+<option value="30"> 30* </option>
+</select>
+RPF Charges: <select id = "RPF4">
 <option value="0"> 0 </option>
 <option value="1"> 1 </option>
 <option value="2"> 2 </option>
@@ -152,7 +155,39 @@ Number of RPF's <select id = "RPF5">
 <option value="10"> 10 </option>
 <option value="11"> 11 </option>
 <option value="12"> 12 </option>
+</select></li>
+<li>Services Used: <input id="Used4" type="number" placeholder="Used Services" required></li>
+<li>Full Plan Costs: <input id="Plan4" type="number" placeholder="Full WP Cost" required></li>
+<li>Installments Paid: <input id="Paid4" type="number" placeholder="Installments Paid" required></li>
+<li>End Date: <input id="EndDate4" type="datetime" placeholder="End Date"></li>
+<input id="Close4" type="number" placeholder="Cost to Close" hidden>    
+</form>
+<hr>
+<!--5th Pet-->
+<form class="MEEP" id="Resets5">
+<li><strong>Pet's Name: </strong><input id="PetName5" type="text" placeholder="What is the Pets Name?" required></li>
+<li>Banking Day: <select id = "BK5">
+<option value="5"> 5 </option>
+<option value="12"> 12 </option>
+<option value="19"> 19 </option>
+<option value="26"> 26 </option>
+<option value="30"> 30* </option>
 </select>
+RPF Charges: <select id = "RPF5">
+<option value="0"> 0 </option>
+<option value="1"> 1 </option>
+<option value="2"> 2 </option>
+<option value="3"> 3 </option>
+<option value="4"> 4 </option>
+<option value="5"> 5 </option>
+<option value="6"> 6 </option>
+<option value="7"> 7 </option>
+<option value="8"> 8 </option>
+<option value="9"> 9 </option>
+<option value="10"> 10 </option>
+<option value="11"> 11 </option>
+<option value="12"> 12 </option>
+</select></li>
 <li>Services Used: <input id="Used5" type="number" placeholder="Used Services" required></li>
 <li>Full Plan Costs: <input id="Plan5" type="number" placeholder="Full WP Cost" required></li>
 <li>Installments Paid: <input id="Paid5" type="number" placeholder="Installments Paid" required></li>

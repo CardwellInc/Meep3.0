@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEEP</title>
+    <title>Document</title>
     <link href="css\style.css" rel="stylesheet" type="text/css" />
-    
 </head>
 <nav>  
     <div>
@@ -25,53 +24,65 @@
 </nav>
 <body>
     
-    <h1> Wellness Plan Cancel </h1>
-    <hr>
-     
-</div> 
-        <form class="MEEP" id="Resets">
-            <li><strong>Pet's Name: </strong><input id="PetName" type="text" placeholder="What is the Pets Name?" required></li>
-            Number of RPF's <select id = "RPF">
-                <option value="0"> 0 </option>
-                <option value="1"> 1 </option>
-                <option value="2"> 2 </option>
-                <option value="3"> 3 </option>
-                <option value="4"> 4 </option>
-                <option value="5"> 5 </option>
-                <option value="6"> 6 </option>
-                <option value="7"> 7 </option>
-                <option value="8"> 8 </option>
-                <option value="9"> 9 </option>
-                <option value="10"> 10 </option>
-                <option value="11"> 11 </option>
-                <option value="12"> 12 </option>
-                </select>
-                <li>Services Used: <input id="Used" type="number" placeholder="Used Services" required></li>
-                <li>Full Plan Costs: <input id="Plan" type="number" placeholder="Full WP Cost" required></li>
-                <li>Installments Paid: <input id="Paid" type="number" placeholder="Installments Paid" required></li>
-                <li>End Date: <input id="EndDate" type="datetime" placeholder="End Date"></li>
-                <input id="Close" type="number" placeholder="Cost to Close" hidden>
-            </form>
-
+    <body>
     
-    <hr>
-    <button id="submit-button"">Submit</button>   
-
-    <h2>To the Client:</h2>
-<div id="CMWC">
-    <p id="result"></p>
-    <p id="Pet1"></p>
-    <p id="Ending"></p>
-</div>
-
-    <h4>Notes:</h4>
-    <div id="NOTES">
-        <p id="note"></p>
-        </div>
+        <h1> Wellness Plan Cancel </h1>
+        <hr>
+         
+    </div> 
+            <form class="MEEP" id="Resets">
+                <li><strong>Pet's Name: </strong><input id="PetName" type="text" placeholder="What is the Pets Name?" required></li>
+                <li>Banking Day: <select id = "BK">
+                    <option value="5"> 5 </option>
+                    <option value="12"> 12 </option>
+                    <option value="19"> 19 </option>
+                    <option value="26"> 26 </option>
+                    <option value="30"> 30* </option>
+                    </select>
+                RPF Charges: <select id = "RPF">
+                    <option value="0"> 0 </option>
+                    <option value="1"> 1 </option>
+                    <option value="2"> 2 </option>
+                    <option value="3"> 3 </option>
+                    <option value="4"> 4 </option>
+                    <option value="5"> 5 </option>
+                    <option value="6"> 6 </option>
+                    <option value="7"> 7 </option>
+                    <option value="8"> 8 </option>
+                    <option value="9"> 9 </option>
+                    <option value="10"> 10 </option>
+                    <option value="11"> 11 </option>
+                    <option value="12"> 12 </option>
+                    </select></li>
+                    <li>Services Used: <input id="Used" type="number" placeholder="Used Services" required></li>
+                    <li>Full Plan Costs: <input id="Plan" type="number" placeholder="Full WP Cost" required></li>
+                    <li>Installments Paid: <input id="Paid" type="number" placeholder="Installments Paid" required></li>
+                    <li>End Date: <input id="EndDate" type="datetime" placeholder="End Date" required></li>
+                    <input id="Close" type="number" placeholder="Cost to Close" hidden>
+                </form>
     
-    <hr>
-    <button class="clear" id="Reset-button"">Reset</button> 
-    <!-- Load JavaScript -->
-    <script src="js/script.js"></script>
+        
+        <hr>
+        <button id="submit-button"">Submit</button>   
+    
+        <h2>To the Client:</h2>
+    <div id="CMWC">
+        <p id="result"></p>
+        <p id="Pet1"></p>
+        <p id="Ending"></p>
+    </div>
+    
+        <h4>Notes:</h4>
+        <div id="NOTES">
+            <p id="note"></p>
+            </div>
+        
+        <hr>
+        <button class="clear" id="Reset-button"">Reset</button> 
+        <!-- Load JavaScript -->
+        <script src="script.js"></script>
+    </body>
+
+
 </body>
 </html>
