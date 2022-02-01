@@ -46,13 +46,13 @@
     var dd = today.getDate();
     var yyyy = today.getFullYear();
     
-    if(parseInt(BK) > parseInt(dd))
-    {
-        var mm= (y+1);
-    } else if(parseInt(BK) < parseInt(dd)){
-    
-       var mm = (y+2);
-    }
+if(parseInt(BK) < parseInt(dd))
+{
+    var mm= (y+1);
+} else if(parseInt(BK) > parseInt(dd)){
+
+   var mm = (y+2);
+}
     
     if(mm>12) 
     {

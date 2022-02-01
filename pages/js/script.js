@@ -42,10 +42,10 @@ var today = new Date();{
 var dd = today.getDate();
 var yyyy = today.getFullYear();
 
-if(parseInt(BK) > parseInt(dd))
+if(parseInt(BK) < parseInt(dd))
 {
     var mm= (y+1);
-} else if(parseInt(BK) < parseInt(dd)){
+} else if(parseInt(BK) > parseInt(dd)){
 
    var mm = (y+2);
 }
