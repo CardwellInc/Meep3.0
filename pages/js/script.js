@@ -25,7 +25,7 @@ var WPBAL = document.getElementById("Plan").value;
 let InstallPaid = document.getElementById("Paid").value;
 let RPF = document.getElementById("RPF").value;
 let EndDate = document.getElementById("EndDate").value;
-let result = "Canceling a Wellness Plan is all based on usage. We figure in how much the hospitals have covered in services and how many payments you have made, and then we come to a final balance based on whichever costs less: the remaining balance of future Plan payments, or the remaining costs of service after deducting past payments. This means you will either pay for the services you have used, Or the remaining 12 month plan balance, whichever is the lesser of the two.";
+let result = "Canceling a Wellness Plan is all based on usage. We figure in how much the hospitals have provided in services and how many payments you have made, and then we come to a final balance based on whichever costs less: the remaining balance of future Plan payments, or the remaining costs of service after deducting past payments. This means you will either pay for the services you have used, Or the remaining 12 month plan balance, whichever is the lesser of the two.";
 
 let RPFc=(RPF*20);  // Total cost of all RPF's
 let w=(WPBAL - RPFc); //cost of plan without RPF's
