@@ -66,27 +66,39 @@ if(parseInt(BK) < parseInt(dd))
     
     
     //make below if statement a var to use in multipet cxl - this is going to be fun =.=
-    if (parseInt(ServUsed) < parseInt(WPBAL)) {
+    if (parseInt(ServUsed) < parseInt(WPBAL) && parseInt(ServUsed) <= parseInt(InstallPaid)) {
                
         ///services used cxl
-    
-    var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost+". This can either be paid today or we can let each monthly installment of $"+x+" lower the balance each month over time, I do recommend calling back before the installment on "+today+" to pay the remaining $"+z+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
-    
-    var note = "-adv $"+CxlCost+" per Services for "+PName+" adv to cb before " +today+ " to pay the remaining $"+z+" to avoid overpymt ";
-    
-    var Ending = " $"+CxlCost+" for "+PName;  
-    
-    
-    } else {
-    
+
+    var P1 = "Looking at "+PName+"'s plan, as all services used have been paid for with the monthly installments we can close the plan today at no cost.";
+
+    var note = "-adv $0 per Services for "+PName+" - cxled at $0 ";
+
+
+
+} else if (parseInt(ServUsed) < parseInt(WPBAL)) {
+  var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost+". This can either be paid today or we can let each monthly installment of $"+x+" lower the balance each month over time, I do recommend calling back before the installment on "+today+" to pay the remaining $"+z+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
+
+  var note = "-adv $"+CxlCost+" per Services for "+PName+" adv to cb before " +today+ " to pay the remaining $"+z+" to avoid overpymt ";
+
+} else if (parseInt(ServUsed) > parseInt(WPBAL) && parseInt(WPBAL) <= parseInt(InstallPaid)) {
+       
+        ///services used cxl
+
+    var P1 = "Looking at "+PName+"'s plan, as all 12 monthly installments have been processed, we can close"+PName+"'s plan today at no cost.";
+
+    var note = "-adv $0 per WP BAL for "+PName+" - cxled at $0 ";
+
+
+} else {
+
             ///WP BAL cxl
-    
+
         var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost2+". This can either be paid today or over the remaining "+q+" installments of $"+x+" each month before the plan expires on "+EndDate+".";
-    
+
         var note = "-adv $"+CxlCost2+" or "+q+" installments per WP BAL for "+PName+" ";
             
-        var Ending = " $"+CxlCost2+" for "+PName;  
-    }    
+} 
      
     
     ///Pet 2
@@ -137,27 +149,39 @@ if(parseInt(BK) < parseInt(dd))
     
     
     //make below if statement a var to use in multipet cxl - this is going to be fun =.=
-    if (parseInt(ServUsed2) < parseInt(WPBAL2)) {
+    if (parseInt(ServUsed2) < parseInt(WPBAL2) && parseInt(ServUsed2) <= parseInt(InstallPaid2)) {
                
         ///services used cxl
-    
-    var P2 = "Looking at "+PName2+"'s plan, as $"+ServUsed2+" of services were used and the plan costs $"+WPBAL2+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid2+" of installments paid, which leaves the cost to close today of $"+CxlCost3+". This can either be paid today or we can let each monthly installment of $"+x2+" lower the balance each month over time, I do recommend calling back before the installment on "+today2+" to pay the remaining $"+z2+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate2+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
-    
-    var note2 = "-adv $"+CxlCost3+" per Services for "+PName2+" adv to cb before " +today2+ " to pay the remaining $"+z2+" to avoid overpymt ";
-    
-    var Ending2 = " $"+CxlCost3+" for "+PName2;  
-    
-    
-    } else {
-    
+
+    var P2 = "Looking at "+PName2+"'s plan, as all services used have been paid for with the monthly installments we can close the plan today at no cost.";
+
+    var note2 = "-adv $0 per Services for "+PName2+" - cxled at $0 ";
+
+
+
+} else if (parseInt(ServUsed2) < parseInt(WPBAL2)) {
+  var P2 = "Looking at "+PName2+"'s plan, as $"+ServUsed2+" of services were used and the plan costs $"+WPBAL2+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid2+" of installments paid, which leaves the cost to close today of $"+CxlCost3+". This can either be paid today or we can let each monthly installment of $"+x2+" lower the balance each month over time, I do recommend calling back before the installment on "+today2+" to pay the remaining $"+z2+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate2+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
+
+  var note2 = "-adv $"+CxlCost3+" per Services for "+PName2+" adv to cb before " +today2+ " to pay the remaining $"+z2+" to avoid overpymt ";
+
+} else if (parseInt(ServUsed2) > parseInt(WPBAL2) && parseInt(WPBAL2) <= parseInt(InstallPaid2)) {
+       
+        ///services used cxl
+
+    var P2 = "Looking at "+PName2+"'s plan, as all 12 monthly installments have been processed, we can close"+PName2+"'s plan today at no cost.";
+
+    var note2 = "-adv $0 per WP BAL for "+PName2+" - cxled at $0 ";
+
+
+} else {
+
             ///WP BAL cxl
-    
+
         var P2 = "Looking at "+PName2+"'s plan, as $"+ServUsed2+" of services were used and the plan costs $"+WPBAL2+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid2+" of installments paid, which leaves the cost to close today of $"+CxlCost4+". This can either be paid today or over the remaining "+q2+" installments of $"+x2+" each month before the plan expires on "+EndDate2+".";
-    
+
         var note2 = "-adv $"+CxlCost4+" or "+q2+" installments per WP BAL for "+PName2+" ";
             
-        var Ending2 = " $"+CxlCost4+" for "+PName2;  
-    }   
+}  
 
 ///Pet 3
 
@@ -206,23 +230,39 @@ console.log(y3);
 
 
 //make below if statement a var to use in multipet cxl - this is going to be fun =.=
-if (parseInt(ServUsed3) < parseInt(WPBAL3)) {
-           
-            ///services used cxl
+if (parseInt(ServUsed3) < parseInt(WPBAL3) && parseInt(ServUsed3) <= parseInt(InstallPaid3)) {
+               
+    ///services used cxl
 
-    var P3 = "Looking at "+PName3+"'s plan, as $"+ServUsed3+" of services were used and the plan costs $"+WPBAL3+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid3+" of installments paid, which leaves the cost to close today of $"+CxlCost5+". This can either be paid today or we can let each monthly installment of $"+x3+" lower the balance each month over time, I do recommend calling back before the installment on "+today3+" to pay the remaining $"+z3+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate3+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
+var P3 = "Looking at "+PName3+"'s plan, as all services used have been paid for with the monthly installments we can close the plan today at no cost.";
 
-    var note3 = "-adv $"+CxlCost5+" per Services for "+PName3+" adv to cb before " +today3+ " to pay the remaining $"+z3+" to avoid overpymt ";
-    var Ending3 = " $"+CxlCost5+" for "+PName3;  
+var note3 = "-adv $0 per Services for "+PName3+" - cxled at $0 ";
 
-    } else {
-                ///WP BAL cxl
 
-        var P3 = "Looking at "+PName3+"'s plan, as $"+ServUsed3+" of services were used and the plan costs $"+WPBAL3+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid3+" of installments paid, which leaves the cost to close today of $"+CxlCost6+". This can either be paid today or over the remaining "+q3+" installments of $"+x3+" each month before the plan expires on "+EndDate3+".";
 
-        var note3 = "-adv $"+CxlCost6+" or "+q3+" installments per WP BAL for "+PName3+" ";
-        var Ending3 = " $"+CxlCost6+" for "+PName3;               
-    } 
+} else if (parseInt(ServUsed3) < parseInt(WPBAL3)) {
+var P3 = "Looking at "+PName3+"'s plan, as $"+ServUsed3+" of services were used and the plan costs $"+WPBAL3+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid3+" of installments paid, which leaves the cost to close today of $"+CxlCost5+". This can either be paid today or we can let each monthly installment of $"+x3+" lower the balance each month over time, I do recommend calling back before the installment on "+today3+" to pay the remaining $"+z3+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate3+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
+
+var note3 = "-adv $"+CxlCost5+" per Services for "+PName3+" adv to cb before " +today3+ " to pay the remaining $"+z3+" to avoid overpymt ";
+
+} else if (parseInt(ServUsed3) > parseInt(WPBAL3) && parseInt(WPBAL3) <= parseInt(InstallPaid3)) {
+   
+    ///services used cxl
+
+var P3 = "Looking at "+PName3+"'s plan, as all 12 monthly installments have been processed, we can close"+PName3+"'s plan today at no cost.";
+
+var note3 = "-adv $0 per WP BAL for "+PName3+" - cxled at $0 ";
+
+
+} else {
+
+        ///WP BAL cxl
+
+    var P3 = "Looking at "+PName3+"'s plan, as $"+ServUsed3+" of services were used and the plan costs $"+WPBAL3+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid3+" of installments paid, which leaves the cost to close today of $"+CxlCost6+". This can either be paid today or over the remaining "+q3+" installments of $"+x3+" each month before the plan expires on "+EndDate3+".";
+
+    var note3 = "-adv $"+CxlCost6+" or "+q3+" installments per WP BAL for "+PName3+" ";
+        
+}
 
 ///Pet 4
 
@@ -270,23 +310,39 @@ console.log(y4);
 }
 
 //make below if statement a var to use in multipet cxl - this is going to be fun =.=
-if (parseInt(ServUsed4) < parseInt(WPBAL4)) {
-           
-            ///services used cxl
+if (parseInt(ServUsed4) < parseInt(WPBAL4) && parseInt(ServUsed4) <= parseInt(InstallPaid4)) {
+               
+    ///services used cxl
 
-        var P4 = "Looking at "+PName4+"'s plan, as $"+ServUsed4+" of services were used and the plan costs $"+WPBAL4+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid4+" of installments paid, which leaves the cost to close today of $"+CxlCost7+". This can either be paid today or we can let each monthly installment of $"+x4+" lower the balance each month over time, I do recommend calling back before the installment on "+today4+" to pay the remaining $"+z4+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate4+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
+var P4 = "Looking at "+PName4+"'s plan, as all services used have been paid for with the monthly installments we can close the plan today at no cost.";
 
-            var note4 = "-adv $"+CxlCost7+" per Services for "+PName4+" adv to cb before " +today4+ " to pay the remaining $"+z4+" to avoid overpymt ";
-        var Ending4 = " $"+CxlCost7+" for "+PName4;  
+var note4 = "-adv $0 per Services for "+PName4+" - cxled at $0 ";
 
-    } else {
-                ///WP BAL cxl
 
-        var P4 = "Looking at "+PName4+"'s plan, as $"+ServUsed4+" of services were used and the plan costs $"+WPBAL4+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid4+" of installments paid, which leaves the cost to close today of $"+CxlCost8+". This can either be paid today or over the remaining "+q4+" installments of $"+x4+" each month before the plan expires on "+EndDate4+".";
 
-        var note4 = "-adv $"+CxlCost8+" or "+q4+" installments per WP BAL for "+PName4+" ";
-        var Ending4 = " $"+CxlCost8+" for "+PName4;               
-    } 
+} else if (parseInt(ServUsed4) < parseInt(WPBAL4)) {
+var P4 = "Looking at "+PName4+"'s plan, as $"+ServUsed4+" of services were used and the plan costs $"+WPBAL4+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid4+" of installments paid, which leaves the cost to close today of $"+CxlCost7+". This can either be paid today or we can let each monthly installment of $"+x4+" lower the balance each month over time, I do recommend calling back before the installment on "+today4+" to pay the remaining $"+z4+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate4+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
+
+var note4 = "-adv $"+CxlCost7+" per Services for "+PName4+" adv to cb before " +today4+ " to pay the remaining $"+z4+" to avoid overpymt ";
+
+} else if (parseInt(ServUsed4) > parseInt(WPBAL4) && parseInt(WPBAL4) <= parseInt(InstallPaid4)) {
+   
+    ///services used cxl
+
+var P4 = "Looking at "+PName4+"'s plan, as all 12 monthly installments have been processed, we can close"+PName4+"'s plan today at no cost.";
+
+var note4 = "-adv $0 per WP BAL for "+PName4+" - cxled at $0 ";
+
+
+} else {
+
+        ///WP BAL cxl
+
+    var P4 = "Looking at "+PName4+"'s plan, as $"+ServUsed4+" of services were used and the plan costs $"+WPBAL4+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid4+" of installments paid, which leaves the cost to close today of $"+CxlCost8+". This can either be paid today or over the remaining "+q4+" installments of $"+x4+" each month before the plan expires on "+EndDate4+".";
+
+    var note4 = "-adv $"+CxlCost8+" or "+q4+" installments per WP BAL for "+PName4+" ";
+        
+}
 
 
 
