@@ -11,6 +11,14 @@
     }
 
 
+    function resetall() {
+    
+        if (confirm("Are you sure you want to Reset?")) {
+            location.reload();
+        }
+    }
+
+
     function buildServ() {
 
 
@@ -41,28 +49,29 @@
     let q=Math.round(CxlCost2/x); //number of remaining installments on wellness plan - WP Cxl
     
     let BK = document.getElementById("BK").value;
-    
     var today = new Date();{
     var dd = today.getDate();
+    var mm = today.getMonth();
     var yyyy = today.getFullYear();
     
-if(parseInt(BK) < parseInt(dd))
-{
-    var mm= (y+1);
-} else if(parseInt(BK) > parseInt(dd)){
-
-   var mm = (y+2);
-}
-    
-    if(mm>12) 
+    if(parseInt(BK) < dd)
     {
-        mm=mm-12;
-    } 
+        var mm= ((mm+2) + y);
+    } else {
     
-    today = mm+'/'+BK+'/'+yyyy;
-    console.log(today);
-    console.log(y);
+       var mm = ((mm+1) + y);
     }
+        
+        if(mm>12) 
+        {
+            mm=mm-12;
+        } 
+        
+        today = mm+'/'+BK+'/'+yyyy;
+        console.log(today);
+        console.log(y);
+        console.log(mm);
+        }
     
     
     //make below if statement a var to use in multipet cxl - this is going to be fun =.=
@@ -75,11 +84,12 @@ if(parseInt(BK) < parseInt(dd))
     var note = "-adv $0 per Services for "+PName+" - cxled at $0 ";
 
 
-
 } else if (parseInt(ServUsed) < parseInt(WPBAL)) {
   var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost+". This can either be paid today or we can let each monthly installment of $"+x+" lower the balance each month over time, I do recommend calling back before the installment on "+today+" to pay the remaining $"+z+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
 
   var note = "-adv $"+CxlCost+" per Services for "+PName+" adv to cb before " +today+ " to pay the remaining $"+z+" to avoid overpymt ";
+
+  var Ending = " $"+CxlCost+" for "+PName;  
 
 } else if (parseInt(ServUsed) > parseInt(WPBAL) && parseInt(WPBAL) <= parseInt(InstallPaid)) {
        
@@ -97,8 +107,9 @@ if(parseInt(BK) < parseInt(dd))
         var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost2+". This can either be paid today or over the remaining "+q+" installments of $"+x+" each month before the plan expires on "+EndDate+".";
 
         var note = "-adv $"+CxlCost2+" or "+q+" installments per WP BAL for "+PName+" ";
+        var Ending = " $"+CxlCost2+" for "+PName;
             
-} 
+}
        
     document.getElementById("result").innerHTML = result;
     document.getElementById("Pet1").innerHTML = P1+" Which option do you prefer?";

@@ -41,28 +41,29 @@
     let q=Math.round(CxlCost2/x); //number of remaining installments on wellness plan - WP Cxl
     
     let BK = document.getElementById("BK").value;
-    
     var today = new Date();{
     var dd = today.getDate();
+    var mm = today.getMonth();
     var yyyy = today.getFullYear();
     
-if(parseInt(BK) < parseInt(dd))
-{
-    var mm= (y+1);
-} else if(parseInt(BK) > parseInt(dd)){
-
-   var mm = (y+2);
-}
-    
-    if(mm>12) 
+    if(parseInt(BK) < dd)
     {
-        mm=mm-12;
-    } 
+        var mm= ((mm+2) + y);
+    } else {
     
-    today = mm+'/'+BK+'/'+yyyy;
-    console.log(today);
-    console.log(y);
+       var mm = ((mm+1) + y);
     }
+        
+        if(mm>12) 
+        {
+            mm=mm-12;
+        } 
+        
+        today = mm+'/'+BK+'/'+yyyy;
+        console.log(today);
+        console.log(y);
+        console.log(mm);
+        }
     
     
     //make below if statement a var to use in multipet cxl - this is going to be fun =.=
@@ -75,11 +76,12 @@ if(parseInt(BK) < parseInt(dd))
     var note = "-adv $0 per Services for "+PName+" - cxled at $0 ";
 
 
-
 } else if (parseInt(ServUsed) < parseInt(WPBAL)) {
   var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the services used. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost+". This can either be paid today or we can let each monthly installment of $"+x+" lower the balance each month over time, I do recommend calling back before the installment on "+today+" to pay the remaining $"+z+". Please keep in mind if you do not reach out the plan will fulfil the year and end automatically on "+EndDate+" and You will also want to avoid using anymore services as closing the plan is based on usage; using more services will adjust the cost to cancel accordingly.";
 
   var note = "-adv $"+CxlCost+" per Services for "+PName+" adv to cb before " +today+ " to pay the remaining $"+z+" to avoid overpymt ";
+
+  var Ending = " $"+CxlCost+" for "+PName;  
 
 } else if (parseInt(ServUsed) > parseInt(WPBAL) && parseInt(WPBAL) <= parseInt(InstallPaid)) {
        
@@ -97,6 +99,7 @@ if(parseInt(BK) < parseInt(dd))
         var P1 = "Looking at "+PName+"'s plan, as $"+ServUsed+" of services were used and the plan costs $"+WPBAL+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid+" of installments paid, which leaves the cost to close today of $"+CxlCost2+". This can either be paid today or over the remaining "+q+" installments of $"+x+" each month before the plan expires on "+EndDate+".";
 
         var note = "-adv $"+CxlCost2+" or "+q+" installments per WP BAL for "+PName+" ";
+        var Ending = " $"+CxlCost2+" for "+PName;
             
 } 
      
@@ -127,25 +130,27 @@ if(parseInt(BK) < parseInt(dd))
     
     var today2 = new Date();{
     var dd2 = today2.getDate();
+    var mm2 = today2.getMonth();
     var yyyy2 = today2.getFullYear();
     
-    if(parseInt(BK2) > parseInt(dd2))
+    if(parseInt(BK2) < dd2)
     {
-        var mm2= (y2+1);
-    } else if(parseInt(BK2) < parseInt(dd2)){
+        var mm2= ((mm2+2) + y2);
+    } else {
     
-       var mm2 = (y2+2);
+       var mm2 = ((mm2+1) + y2);
     }
-    
-    if(mm2>12) 
-    {
-        mm2=mm2-12;
-    } 
-    
-    today2 = mm2+'/'+BK2+'/'+yyyy2;
-    console.log(today2);
-    console.log(y2);
-    }
+        
+        if(mm2>12) 
+        {
+            mm2=mm2-12;
+        } 
+        
+        today2 = mm2+'/'+BK2+'/'+yyyy2;
+        console.log(today2);
+        console.log(y2);
+        console.log(mm2);
+        }
     
     
     //make below if statement a var to use in multipet cxl - this is going to be fun =.=
@@ -164,6 +169,8 @@ if(parseInt(BK) < parseInt(dd))
 
   var note2 = "-adv $"+CxlCost3+" per Services for "+PName2+" adv to cb before " +today2+ " to pay the remaining $"+z2+" to avoid overpymt ";
 
+  var Ending2 = " $"+CxlCost3+" for "+PName2;
+
 } else if (parseInt(ServUsed2) > parseInt(WPBAL2) && parseInt(WPBAL2) <= parseInt(InstallPaid2)) {
        
         ///services used cxl
@@ -180,6 +187,7 @@ if(parseInt(BK) < parseInt(dd))
         var P2 = "Looking at "+PName2+"'s plan, as $"+ServUsed2+" of services were used and the plan costs $"+WPBAL2+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid2+" of installments paid, which leaves the cost to close today of $"+CxlCost4+". This can either be paid today or over the remaining "+q2+" installments of $"+x2+" each month before the plan expires on "+EndDate2+".";
 
         var note2 = "-adv $"+CxlCost4+" or "+q2+" installments per WP BAL for "+PName2+" ";
+        var Ending2 = " $"+CxlCost4+" for "+PName2;
             
 }  
 
@@ -206,27 +214,29 @@ let q3=Math.round(CxlCost6/x3); //number of remaining installments on wellness p
 
 let BK3 = document.getElementById("BK3").value;
 
-var today3 = new Date();{
-var dd3 = today3.getDate();
-var yyyy3 = today3.getFullYear();
-
-if(parseInt(BK3) > parseInt(dd3))
-{
-    var mm3= (y3+1);
-} else if(parseInt(BK3) < parseInt(dd3)){
-
-   var mm3 = (y3+2);
-}
-
-if(mm3>12) 
-{
-    mm3=mm3-12;
-} 
-
-today3 = mm3+'/'+BK3+'/'+yyyy3;
-console.log(today3);
-console.log(y3);
-}
+    var today3 = new Date();{
+    var dd3 = today3.getDate();
+    var mm3 = today3.getMonth();
+    var yyyy3 = today3.getFullYear();
+    
+    if(parseInt(BK3) < dd3)
+    {
+        var mm3= ((mm3+2) + y3);
+    } else {
+    
+       var mm3 = ((mm3+1) + y3);
+    }
+        
+        if(mm3>12) 
+        {
+            mm3=mm3-12;
+        } 
+        
+        today3 = mm3+'/'+BK3+'/'+yyyy3;
+        console.log(today3);
+        console.log(y3);
+        console.log(mm3);
+        }
 
 
 //make below if statement a var to use in multipet cxl - this is going to be fun =.=
@@ -245,6 +255,8 @@ var P3 = "Looking at "+PName3+"'s plan, as $"+ServUsed3+" of services were used 
 
 var note3 = "-adv $"+CxlCost5+" per Services for "+PName3+" adv to cb before " +today3+ " to pay the remaining $"+z3+" to avoid overpymt ";
 
+var Ending3 = " $"+CxlCost5+" for "+PName3;
+
 } else if (parseInt(ServUsed3) > parseInt(WPBAL3) && parseInt(WPBAL3) <= parseInt(InstallPaid3)) {
    
     ///services used cxl
@@ -262,6 +274,7 @@ var note3 = "-adv $0 per WP BAL for "+PName3+" - cxled at $0 ";
 
     var note3 = "-adv $"+CxlCost6+" or "+q3+" installments per WP BAL for "+PName3+" ";
         
+    var Ending3 = " $"+CxlCost6+" for "+PName3;
 }
 
 ///Pet 4
@@ -287,27 +300,30 @@ let q4=Math.round(CxlCost8/x4); //number of remaining installments on wellness p
 
 let BK4 = document.getElementById("BK4").value;
 
-var today4 = new Date();{
-var dd4 = today4.getDate();
-var yyyy4 = today4.getFullYear();
-
-if(parseInt(BK4) > parseInt(dd4))
-{
-    var mm4= (y4+1);
-} else if(parseInt(BK4) < parseInt(dd4)){
-
-   var mm4 = (y4+2);
-}
-
-if(mm4>12) 
-{
-    mm4=mm4-12;
-} 
-
-today4 = mm4+'/'+BK4+'/'+yyyy4;
-console.log(today4);
-console.log(y4);
-}
+    var today4 = new Date();{
+    var dd4 = today4.getDate();
+    var mm4 = today4.getMonth();
+    var yyyy4 = today4.getFullYear();
+    
+    if(parseInt(BK4) < dd4)
+    {
+        var mm4= ((mm4+2) + y4);
+    } else {
+    
+       var mm4 = ((mm4+1) + y4);
+    }
+        
+        if(mm4>12) 
+        {
+            mm4=mm4-12;
+        } 
+        
+        today4 = mm4+'/'+BK4+'/'+yyyy4;
+        console.log(today4);
+        console.log(y4);
+        console.log(mm4);
+        }
+    
 
 //make below if statement a var to use in multipet cxl - this is going to be fun =.=
 if (parseInt(ServUsed4) < parseInt(WPBAL4) && parseInt(ServUsed4) <= parseInt(InstallPaid4)) {
@@ -325,6 +341,8 @@ var P4 = "Looking at "+PName4+"'s plan, as $"+ServUsed4+" of services were used 
 
 var note4 = "-adv $"+CxlCost7+" per Services for "+PName4+" adv to cb before " +today4+ " to pay the remaining $"+z4+" to avoid overpymt ";
 
+var Ending4 = " $"+CxlCost7+" for "+PName4;  
+
 } else if (parseInt(ServUsed4) > parseInt(WPBAL4) && parseInt(WPBAL4) <= parseInt(InstallPaid4)) {
    
     ///services used cxl
@@ -341,6 +359,8 @@ var note4 = "-adv $0 per WP BAL for "+PName4+" - cxled at $0 ";
     var P4 = "Looking at "+PName4+"'s plan, as $"+ServUsed4+" of services were used and the plan costs $"+WPBAL4+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid4+" of installments paid, which leaves the cost to close today of $"+CxlCost8+". This can either be paid today or over the remaining "+q4+" installments of $"+x4+" each month before the plan expires on "+EndDate4+".";
 
     var note4 = "-adv $"+CxlCost8+" or "+q4+" installments per WP BAL for "+PName4+" ";
+
+    var Ending4 = " $"+CxlCost8+" for "+PName4;  
         
 }
 
@@ -369,27 +389,29 @@ let q5=Math.round(CxlCostX/x5); //number of remaining installments on wellness p
 
 let BK5 = document.getElementById("BK5").value;
 
-var today5 = new Date();{
-var dd5 = today5.getDate();
-var yyyy5 = today5.getFullYear();
-
-if(parseInt(BK5) > parseInt(dd5))
-{
-    var mm5= (y5+1);
-} else if(parseInt(BK5) < parseInt(dd5)){
-
-   var mm5 = (y5+2);
-}
-
-if(mm5>12) 
-{
-    mm5=mm5-12;
-} 
-
-today5 = mm5+'/'+BK5+'/'+yyyy5;
-console.log(today5);
-console.log(y5);
-}
+    var today5 = new Date();{
+    var dd5 = today5.getDate();
+    var mm5 = today5.getMonth();
+    var yyyy5 = today5.getFullYear();
+    
+    if(parseInt(BK5) < dd5)
+    {
+        var mm5= ((mm5+2) + y5);
+    } else {
+    
+       var mm5 = ((mm5+1) + y5);
+    }
+        
+        if(mm5>12) 
+        {
+            mm5=mm5-12;
+        } 
+        
+        today5 = mm5+'/'+BK5+'/'+yyyy5;
+        console.log(today5);
+        console.log(y5);
+        console.log(mm5);
+        }
 
 //make below if statement a var to use in multipet cxl - this is going to be fun =.=
 if (parseInt(ServUsed5) < parseInt(WPBAL5) && parseInt(ServUsed5) <= parseInt(InstallPaid5)) {
@@ -407,6 +429,8 @@ var P5 = "Looking at "+PName5+"'s plan, as $"+ServUsed5+" of services were used 
 
 var note5 = "-adv $"+CxlCost9+" per Services for "+PName5+" adv to cb before " +today5+ " to pay the remaining $"+z5+" to avoid overpymt ";
 
+var Ending5 = " $"+CxlCost9+" for "+PName5;  
+
 } else if (parseInt(ServUsed5) > parseInt(WPBAL5) && parseInt(WPBAL5) <= parseInt(InstallPaid5)) {
    
     ///services used cxl
@@ -423,6 +447,8 @@ var note5 = "-adv $0 per WP BAL for "+PName5+" - cxled at $0 ";
     var P5 = "Looking at "+PName5+"'s plan, as $"+ServUsed5+" of services were used and the plan costs $"+WPBAL5+", we can close for the lesser of the two amounts being the cost of the plan. We then subtract the $"+InstallPaid5+" of installments paid, which leaves the cost to close today of $"+CxlCostX+". This can either be paid today or over the remaining "+q5+" installments of $"+x5+" each month before the plan expires on "+EndDate5+".";
 
     var note5 = "-adv $"+CxlCostX+" or "+q5+" installments per WP BAL for "+PName5+" ";
+
+    var Ending5 = " $"+CxlCostX+" for "+PName5;  
         
 }
 
