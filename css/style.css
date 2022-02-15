@@ -193,6 +193,22 @@ select:hover {
     line-height: 20px;
 }
 
+#CMWC2 {
+    border: 5px solid rgb(250, 108, 56);
+    padding: 20px;
+    font-size: 15px;
+    color: black;
+    line-height: 20px;
+}
+
+#Ending {
+    border: 5px solid rgb(250, 108, 56);
+    padding: 20px;
+    font-size: 15px;
+    color: black;
+    line-height: 20px;
+}
+
 
 #Resets {
     list-style: none;
